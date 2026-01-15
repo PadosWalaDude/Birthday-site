@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffe6ef, #fff);
+}
+
+.nav {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+    z-index: 1000;
+}
+
+.nav-item {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-item:hover {
+    background: #ff9fc4;
+    transform: translateY(-3px);
+}
+
+.scroll-container {
+    height: 100vh;
+    transition: transform 1s ease;
+}
+
+.panel {
+    height: 100vh;
+    padding: 120px 80px;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    font-size: 1.3rem;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    color: #c2185b;
+}
+
+.card.big {
+    font-size: 1.6rem;
+    color: #e05d8f;
+    font-style: italic, bold;
+}
+
+.photo-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.photo,
+.memory-img,
+.memory-img2,
+.surprise-img {
+    width: 200px;
+    height: 200px;
+    background: #ffd1e3;
+    border-radius: 20px;
+}
+
+.tilt1 {
+    background-image: url("pic1.jpg");
+    background-size: contain; 
+    background-repeat: no-repeat; 
+    background-position: center;   
+    transform: rotate(-6deg);
+}
+
+.tilt2 {
+    background-image: url("pic2.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(4deg);
+}
+
+.tilt3 {
+    background-image: url("pic3.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-2deg);
+}
+
+.tilt4 {
+    background-image: url("pic4.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-4deg);
+}
+
+.tilt5 {
+    background-image: url("pic5.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(6deg);
+}
+
+.tilt6 {
+    background-image: url("pic6.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(2deg);
+}
+
+.tilt7 {
+    background-image: url("pic7.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(-5deg);
+}
+
+.memory-img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 20px;
+    display: block;
+    background-size: -80% auto;
+}
+
+.memory-img2 {
+    background-image: url("memory_img2.jpg");
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(1deg);
+}
+
+.surprise-img {
+    background-image: url("surprise_img.jpg");
+    background-size: 80% auto;
+    flex-shrink: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    transform: rotate(1deg);
+}
+
+.memory-card {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.surprise-box {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    color: #c2185b;
+    font-size: 1.3rem;
+}
+
+#backBtn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 2000;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+#backBtn:hover {
+    transform: scale(1.15) rotate(-8deg);
+    background: #ff9fc4;
+}
+
+#musicBtn {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: white;
+    padding: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2000;
+    transition: transform 0.3s ease;
+}
+
+#musicBtn:hover {
+    transform: scale(1.2);
+}
+
+.hearts-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1500;
+}
+
+.heart {
+  position: absolute;
+  bottom: -20px;
+  font-size: 20px;
+  color: rgba(255, 105, 180, 0.7);
+  animation: floatUp linear forwards;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-110vh) scale(1.6);
+    opacity: 0;
+  }
+}
+
+
+/* .parallax-wrapper {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    #ffd6e8,
+    #fff1f7
+  );
+}
+.parallax-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background-image: url("your-image-here.jpg");
+  background-size: cover;
+  background-position: center;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+.parallax-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #c2185b;
+  padding: 40px;
+}
+
+.parallax-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+
+.parallax-content p {
+  font-size: 1.4rem;
+  max-width: 600px;
+  line-height: 1.8;
+} */
